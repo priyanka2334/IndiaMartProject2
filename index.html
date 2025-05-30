@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IndiaMART Clone</title>
+    <link rel="stylesheet" href="./Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="blur-overlay" id="blurOverlay"></div>
+
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">M</div>
+        <span>IndiaMART</span>
+      </div>
+
+      <div class="search-container">
+        <select class="location-dropdown" id="locationDropdown">
+          <option>All India</option>
+        </select>
+        
+        <div class="city-search-container" id="citySearchContainer">
+          <input
+            type="text"
+            class="city-search-input"
+            placeholder="Search city..."
+            id="citySearchInput"
+          />
+          <div class="city-list" id="cityList">
+            <div class="city-item" data-city="Mumbai">Mumbai</div>
+            <div class="city-item" data-city="Delhi">Delhi</div>
+            <div class="city-item" data-city="Bangalore">Bangalore</div>
+            <div class="city-item" data-city="Chennai">Chennai</div>
+            <div class="city-item" data-city="Kolkata">Kolkata</div>
+            <div class="city-item" data-city="Pune">Pune</div>
+            <div class="city-item" data-city="Hyderabad">Hyderabad</div>
+            <div class="city-item" data-city="Ahmedabad">Ahmedabad</div>
+          </div>
+        </div>
+
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Enter product / service to search"
+          id="mainSearchInput"
+        />
+        <button class="voice-btn">
+          <img
+            src="./mic.png"
+            alt="Mic"
+            style="width: 24px; height: 24px"
+          />
+        </button>
+        <button class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <button class="get-price-btn">Get Best Price</button>
+
+      <nav class="nav-items">
+        <div class="nav-item">
+          <span><i class="fas fa-home-alt"></i></span>
+          <span>Sell</span>
+        </div>
+        <div class="nav-item">
+          <span><i class="fas fa-comment-dots"></i></span>
+          <span>Messages</span>
+        </div>
+        <div class="nav-item">
+          <span><i class="fas fa-shopping-cart"></i></span>
+          <span>Shopping</span>
+        </div>
+        <div class="nav-item" id="hiNavItem">
+          <span><i class="fas fa-circle-user"></i></span>
+          <span>Hi</span>
+          
+          <div class="hi-dropdown" id="hiDropdown">
+            <div class="dropdown-header">
+              <span class="user-id">8470800542</span>
+              <span class="verified-badge">✓ Verified</span>
+            </div>
+            
+            <a href="#" class="profile-link">
+              <i class="fas fa-edit"></i>
+              <span>View Profile</span>
+            </a>
+            
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">
+                  <i class="fas fa-home"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-plus-square"></i>
+                  <span>Post Your Requirement</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-user-check"></i>
+                  <span>Verified Business Buyer</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-book"></i>
+                  <span>Products/Services Directory</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-shopping-bag"></i>
+                  <span>My Orders</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-clock"></i>
+                  <span>Recent Activity</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-cog"></i>
+                  <span>Settings</span>
+                  <span class="new-badge">NEW</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-handshake"></i>
+                  <span>Business Loans</span>
+                  <span class="new-badge">NEW</span>
+                  <small class="menu-description">Loans made simple</small>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-shipping-fast"></i>
+                  <span>Ship With IndiaMART</span>
+                  <small class="menu-description">Easy booking of transport</small>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-download"></i>
+                  <span>Download App</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span><i class="fas fa-chevron-down"></i></span>
+        <div class="nav-item" id="helpNavItem">
+          <span><i class="fas fa-circle-question"></i></span>
+          <span>Help</span>
+          
+          <div class="help-dropdown" id="helpDropdown">
+            <div class="help-header">
+              Find answers to your queries
+            </div>
+            
+            <ul class="dropdown-menu help-menu">
+              <li>
+                <a href="#">
+                  <i class="fas fa-shopping-cart"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">For Buying</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-store"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">For Selling</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-comments"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">Share your Feedback</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">Raise a Complaint</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">Email us on</div>
+                    <div class="help-item-desc">customercare@indiamart.com</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-phone"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">Call us at 096-9696-9696</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-comment-dots"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">Chat With us</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-graduation-cap"></i>
+                  <div class="help-item-content">
+                    <div class="help-item-title">Seller Academy</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <aside class="sidebar">
+        <div class="chat-header">
+          <div class="view-toggle">
+            <span>Chat View</span>
+            <div class="toggle-switch chat-view" id="toggleSwitch"></div>
+            <span>Product View</span>
+          </div>
+          <button class="menu-btn">⋮</button>
+        </div>
+        <div class="no-chats">No chats, contacts or messages found</div>
+      </aside>
+
+      <main class="content-area" id="contentArea">
+        <div class="welcome-section" id="welcomeSection">
+          <h1 class="welcome-title">Welcome</h1>
+          <p class="welcome-subtitle">
+            There is no active requirement with us.
+          </p>
+
+          <div class="requirement-form">
+            <h2 class="form-title">Post Your Requirement</h2>
+            <input
+              type="text"
+              class="form-input"
+              placeholder="Enter Product / Service name"
+              id="productInput"
+            />
+            <button class="submit-btn" onclick="submitRequirement()">
+              Submit Requirement
+            </button>
+          </div>
+        </div>
+        <div
+          class="product-view-content"
+          id="productViewContent"
+          style="display: none"
+        >
+          
+        </div>
+      </main>
+    </div>
+
+    <script src="./Script.js"></script>
+  </body>
+</html>
